@@ -13,13 +13,11 @@ module.exports = (robot) ->
         try
           json = JSON.parse(body)
 #SEND VARIOUS INFO:
-          msg.send "Merk/type: #{json.d.results[0].Handelsbenaming}"
+          msg.send "Merk: #{json.d.results[0].Merk}"
+          msg.send "Type: #{json.d.results[0].Handelsbenaming}"
           msg.send "Catalogusprijs: #{json.d.results[0].Catalogusprijs}"
           msg.send "Kleur: #{json.d.results[0].Eerstekleur}"
         catch error
-          msg.send "ERROR"
+          msg.send "kenteken niet gevonden."
 
-#    unless results?
-#      msg.send "No  results for \"#{query}\""
-#      return
 
